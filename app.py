@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/webhook', methods=['POST'])
 def webhook():
-    subprocess.run(['git', '-C', '/home/ramoj745/PSPACE', 'pull'])
+    subprocess.run(['git', '-C', '/home/ramoj745/test_repo', 'pull'])
     subprocess.run(['sudo', 'systemctl', 'restart', 'your-flask-app'])
     return 'Webhook received!', 200
 
